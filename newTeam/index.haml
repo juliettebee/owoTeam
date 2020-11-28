@@ -1,0 +1,21 @@
+!!! 5
+%html
+  %head
+    %title Create New Team
+  %body
+    #header
+      %h1 Create new team
+    %script{:src => "../js/newTeam.js"}
+
+    %form
+      %input#teamName(type="text" placeholder="Team name" name="teamName")
+      %br
+      %input#animalZeroType(type="text" placeholder="Animal" name="animalZeroType") 
+      %input#animalZeroWeapon(type="text" placeholder="Weapon id" name="animalZeroWeapon")
+      %br
+      %input#animalOneType(type="text" placeholder="Animal" name="animalOneType") 
+      %input#animalOneWeapon(type="text" placeholder="Weapon id" name="animalOneWeapon")
+      %br
+      %input#animalTwoType(type="text" placeholder="Animal" name="animalTwoType") 
+      %input#animalTwoWeapon(type="text" placeholder="Weapon id" name="animalTwoWeapon")
+    %button{:onClick => "submit()"} Save team
