@@ -10,7 +10,7 @@ function main() { // I know this isn't proper JS but it helps me
             var team = teams[i];
             // Creating the element
             teamDiv.innerHTML += `
-            <div class="team">
+            <div class="team" id="${i}">
                 <h1 class="teamName">
                     ${team["name"]}
                     <i class="fas fa-check" aria-label="Check mark, use icon" onclick="generateCommand(${i})"></i>
@@ -39,4 +39,12 @@ function generateCommand(i) {
     window.location = `generateCommand/index.html?i=${i}`;
 }
 
-
+function deleteTeam(i) {
+    var teams = JSON.parse(localStorage.getItem("teams"));
+    // Removing
+    teams.splice(i, 1);
+    // Saving
+    localStorage.setItem("teams", JSON.stringify(teams));
+    // Deleting element
+    document.getElementById(i).remove();
+}
