@@ -16,6 +16,7 @@ function main() { // I know this isn't proper JS but it helps me
                     <i class="fas fa-check" aria-label="Check mark, use icon" onclick="generateCommand(${i})"></i>
                     <i class="far fa-trash-alt" aria-label="Trash icon" onclick="deleteTeam(${i})"></i>
                     <i class="fas fa-code-branch" aria-label="Code branch icon" onclick="branch(${i})"></i>
+      <!--TODO              <i class="far fa-copy ${i}share" aria-label="Clipboard icon" onclick="share(${i})" id="${i}share"></i> -->
                 </h1>
                 <div class="animal">
                     <p class="animalType">${team["animals"][0]["type"]}<span class="animalWeapon"> - ${team["animals"][0]["weapon"]}</span></p>
@@ -55,4 +56,29 @@ function branch(i) {
     var team = teams[i];
     console.log(team);
     window.location = `newTeam/index.html?teamName=${team["name"]}&animalZeroType=${team["animals"][0]["type"]}&animalZeroWeapon=${team["animals"][0]["weapon"]}&animalOneType=${team["animals"][1]["type"]}&animalOneWeapon=${team["animals"][1]["weapon"]}&animalTwoType=${team["animals"][2]["type"]}&animalTwoWeapon=${team["animals"][2]["weapon"]}`;
+}
+
+function share(i) {
+    var teams = JSON.parse(localStorage.getItem("teams"));
+    // Getting team
+    var team = teams[i];
+    // Creating element
+    const el = document.createElement('text-area');
+    // Setting value to json
+    el.value = `${JSON.stringify(team)}`;
+    // Adding elem
+    document.body.appendChild(el);
+    // Copy
+    el.select();
+    el.setSelectionRange(0, 99999);
+    document.execCommand('copy');
+    // Deleting elem
+    document.body.removeChild(el);
+    // Changing class
+    var shareElm = document.getElementById(`${i}share`);
+    document.getElementById("MyElement").classList.remove('fa-copy');
+    document.getElementById("MyElement").classList.remove('far');
+    document.getElementById("MyElement").classList.add('fa-check');
+    document.getElementById("MyElement").classList.add('fas');
+
 }
