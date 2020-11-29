@@ -6,7 +6,6 @@
     #header
       %h1 Create new team
     %script{:src => "../js/newTeam.min.js"}
-
     %form
       %input#teamName(type="text" placeholder="Team name" name="teamName")
       %br
@@ -18,4 +17,6 @@
       %br
       %input#animalTwoType(type="text" placeholder="Animal" name="animalTwoType") 
       %input#animalTwoWeapon(type="text" placeholder="Weapon id" name="animalTwoWeapon")
+    %script main()
     %button{:onClick => "submit()"} Save team
+    %a(href="../index.html")Home

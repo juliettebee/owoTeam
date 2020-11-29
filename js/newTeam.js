@@ -1,3 +1,17 @@
+function main() {
+    // Getting params
+    let params = new URLSearchParams(window.location.search);
+    // Filling out
+    document.getElementById("teamName").value = params.get('teamName');
+    document.getElementById("animalZeroType").value = params.get('animalZeroType');
+    document.getElementById("animalZeroWeapon").value = params.get('animalZeroWeapon');
+    document.getElementById("animalOneType").value = params.get('animalOneType');
+    document.getElementById("animalOneWeapon").value = params.get('animalOneWeapon');
+    document.getElementById("animalTwoType").value = params.get('animalTwoType');
+    document.getElementById("animalTwoWeapon").value = params.get('animalTwoWeapon');
+}
+
+
 function submit() {
     // Getting values
     const teamVal = {name: document.getElementById("teamName").value,animals: [{type: document.getElementById("animalZeroType").value,weapon: document.getElementById("animalZeroWeapon").value},{type: document.getElementById("animalOneType").value,weapon: document.getElementById("animalOneWeapon").value},{type: document.getElementById("animalTwoType").value,weapon: document.getElementById("animalTwoWeapon").value}]};

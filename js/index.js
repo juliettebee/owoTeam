@@ -48,3 +48,11 @@ function deleteTeam(i) {
     // Deleting element
     document.getElementById(i).remove();
 }
+
+function branch(i) {
+    var teams = JSON.parse(localStorage.getItem("teams"));
+    // Getting team
+    var team = teams[i];
+    console.log(team);
+    window.location = `newTeam/index.html?teamName=${team["name"]}&animalZeroType=${team["animals"][0]["type"]}&animalZeroWeapon=${team["animals"][0]["weapon"]}&animalOneType=${team["animals"][1]["type"]}&animalOneWeapon=${team["animals"][1]["weapon"]}&animalTwoType=${team["animals"][2]["type"]}&animalTwoWeapon=${team["animals"][2]["weapon"]}`;
+}
