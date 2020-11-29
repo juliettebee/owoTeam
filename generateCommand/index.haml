@@ -1,0 +1,17 @@
+!!! 5
+%html
+  %head
+    %title Use team
+    %script(src="https://kit.fontawesome.com/5ccbea5c98.js" crossorigin="anonymous")
+ 
+  %body
+    #header
+      %h1 Use team
+    %script{:src => "../js/functions.min.js"}
+    %script{:src => "../js/generateTeam.min.js"}
+    %p Copy and paste these commands to use this team.
+    %p#command
+    %p<
+      %i#prev(class="fas fa-arrow-circle-left" onclick="prev()")
+      %i#next(class="fas fa-arrow-circle-right" onclick="next()")
+    %script main()
