@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #333456;
+}
+
+.fa-check:hover {
+    color: #bedbbb;
+    cursor: pointer;
+}
+
+.fa-trash-alt:hover {
+    color: #ec5858;
+    cursor: pointer;
+}
+
+.fa-code-branch:hover {
+    color: #bedbbb;
+    cursor: pointer;
+}
