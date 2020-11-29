@@ -9,6 +9,8 @@ mkdir public/js
 mkdir public/newTeam
 # Creating generateCommand folder
 mkdir public/generateCommand
+# Creating styles folder
+mkdir public/css
 # Converting
 haml index.haml > public/index.html
 haml newTeam/index.haml > public/newTeam/index.html
@@ -18,3 +20,5 @@ terser js/index.js -o public/js/index.min.js -c -m
 terser js/newTeam.js -o public/js/newTeam.min.js -c -m
 terser js/functions.js -o public/js/functions.min.js -c -m
 terser js/generateTeam.js -o public/js/generateTeam.min.js -c -m
+# Copy css
+cp css/styles.css public/css/styles.css

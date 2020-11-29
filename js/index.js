@@ -14,7 +14,7 @@ function main() { // I know this isn't proper JS but it helps me
                 <h1 class="teamName">
                     ${team["name"]}
                     <i class="fas fa-check" aria-label="Check mark, use icon" onclick="generateCommand(${i})"></i>
-                    <i class="far fa-trash-alt aria-label="Trash icon" onclick="deleteTeam(${i})"></i>
+                    <i class="far fa-trash-alt" aria-label="Trash icon" onclick="deleteTeam(${i})"></i>
                     <i class="fas fa-code-branch" aria-label="Code branch icon" onclick="branch(${i})"></i>
                 </h1>
                 <div class="animal">
